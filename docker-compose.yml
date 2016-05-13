@@ -3,22 +3,9 @@ services:
   web:
     container_name: lyeung/jenkins-jdk8-maven3-base
     build: .
-    image: jenkins:1.651.1 #lyeung-jenkins-jdk8-maven3-base
+    image: jenkins:1.651.1 
     ports:
       - '50000:50000'
       - '9080:8080'
     volumes:
       - ~/docker-jenkins:/var/jenkins_home
-#    networks:
-#      lyeung-jenkins-network:
-#        ipv4_address: 172.25.1.2
-
-
-networks:
-  lyeung-jenkins-network:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.25.0.0/16
-          gateway: 172.25.0.1
